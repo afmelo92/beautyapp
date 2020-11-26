@@ -44,15 +44,10 @@ const Carousel: React.FC = () => {
     }
   }, [pause, slider])
   return (
-    <div ref={sliderRef} className="keen-slider">
+    <div ref={sliderRef} className="keen-slider h-64 md:h-64">
       {banners.map((banner, index) => (
         <div key={index} className="keen-slider__slide number-slide1">
-          <Image
-            src={`/${banner}`}
-            alt={`${banner}`}
-            width={320}
-            height={250}
-          />
+          <Image src={`/${banner}`} alt={`${banner}`} layout="fill" />
         </div>
       ))}
     </div>

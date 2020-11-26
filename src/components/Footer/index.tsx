@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 const Footer: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const Footer: React.FC = () => {
         <strong>CNPJ:</strong> 17.777.777/0001-77
       </p>
       <section className="text-left pl-8 mt-10">
-        <h1 className="text-3xl text-pink-800 font-bold mb-4">Links Úteis</h1>
+        <h1 className="text-3xl underline font-bold mb-4">Links Úteis</h1>
         <ul className="font-light leading-8">
           <li>
             <a href="">Sobre nós</a>
@@ -51,14 +52,12 @@ const Footer: React.FC = () => {
         </ul>
       </section>
       <section className="text-left px-8 mt-10">
-        <h1 className="text-3xl text-pink-800 font-bold mb-4">
-          Entre em contato
-        </h1>
+        <h1 className="text-3xl underline font-bold mb-4">Entre em contato</h1>
         <div className="mb-4">
           <strong className="text-xl">(11) 9 8888-9999</strong>
           <p className="font-light text-sm">São Paulo, Capital</p>
         </div>
-        <div className="pb-4 border-b-2">
+        <div className="pb-8 border-b-2">
           <strong className="text-xl">0800 888 9999</strong>
           <p className="font-light text-sm">Demais Regiões</p>
         </div>
@@ -69,6 +68,24 @@ const Footer: React.FC = () => {
         <p>08h - 20h</p>
         <h1 className="text-xl font-bold mt-4">Sábado</h1>
         <p>08h - 14h</p>
+      </section>
+      <section className="text-left px-8 mt-10 pb-10">
+        <h1 className="text-3xl underline font-bold mb-4">Social</h1>
+        <div className="flex">
+          <a href="">
+            <FaFacebook size={30} style={{ marginRight: 10 }} />
+          </a>
+          <a href="">
+            <FaInstagram size={30} style={{ marginRight: 10 }} />
+          </a>
+          <a href="">
+            <FaYoutube size={30} />
+          </a>
+        </div>
+      </section>
+      <section className="text-left px-8 mt-10 pb-10">
+        <h1>AFMELO ENTERPRISES - {new Date().getFullYear()}</h1>
+        <h3>Todos os direitos reservados</h3>
       </section>
     </footer>
   )

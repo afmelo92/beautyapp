@@ -8,6 +8,9 @@ module.exports = {
       maxWidth: {
         'card': 300,
       },
+      height: {
+        'banner': 600,
+      }
     },
     colors: {
       gray: colors.trueGray,

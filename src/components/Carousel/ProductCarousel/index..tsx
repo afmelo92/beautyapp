@@ -15,17 +15,28 @@ interface Product {
   fem?: boolean
 }
 
-interface ProductProps {
+interface CarouselProps {
   products: Product[]
 }
 
-const ProductCarousel: React.FC<ProductProps> = ({ products }) => {
+const ProductCarousel: React.FC<CarouselProps> = ({ products }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    slidesPerView: 4,
     initial: 0,
     loop: true,
     slideChanged(sl) {
       setCurrentSlide(sl.details().relativeSlide)
+    },
+    breakpoints: {
+      '(max-width: 768px)': {
+        slidesPerView: 1,
+        mode: 'free-snap'
+      },
+      '(min-width: 1200px)': {
+        slidesPerView: 4,
+        mode: 'free-snap'
+      }
     }
   })
 
@@ -41,16 +52,6 @@ const ProductCarousel: React.FC<ProductProps> = ({ products }) => {
               <ProductCard product={product} />
             </div>
           ))}
-          {/* <a
-            href="https://google.com"
-            className={cn(
-              'keen-slider__slide',
-              `${s.root}`,
-              `${s.numberslide1}`
-            )}
-          >
-            <div>1</div>
-          </a> */}
         </div>
         {slider && (
           <>
@@ -89,11 +90,11 @@ const ProductCarousel: React.FC<ProductProps> = ({ products }) => {
 }
 
 function ArrowLeft(props) {
-  const disabeld = props.disabled ? ` ${s.arrowdisabled}` : ''
+  const disabled = props.disabled ? ` ${s.arrowdisabled}` : ''
   return (
     <svg
       onClick={props.onClick}
-      className={cn(`${s.arrow}`, `${s.arrowleft}`) + disabeld}
+      className={cn(`${s.arrow}`, `${s.arrowleft}`) + disabled}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
@@ -103,11 +104,11 @@ function ArrowLeft(props) {
 }
 
 function ArrowRight(props) {
-  const disabeld = props.disabled ? ` ${s.arrowdisabled}` : ''
+  const disabled = props.disabled ? ` ${s.arrowdisabled}` : ''
   return (
     <svg
       onClick={props.onClick}
-      className={cn(`${s.arrow}`, `${s.arrowright}`) + disabeld}
+      className={cn(`${s.arrow}`, `${s.arrowright}`) + disabled}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >

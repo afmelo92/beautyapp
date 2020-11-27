@@ -4,19 +4,18 @@ import Image from 'next/image'
 
 import 'keen-slider/keen-slider.min.css'
 import cn from 'classnames'
-import s from './Loop.module.css'
+import s from './MainBanner.module.css'
 
-interface Images {
-  id?: number | string
-  source: string
-  title?: string
-}
+// interface Images {
+//   id: number
+//   source: string
+// }
 
-interface LoopProps {
-  images: Images[]
-}
+// interface LoopProps {
+//   images: Images[]
+// }
 
-const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
+const MainBannerCarousel: React.FC = () => {
   const [pause, setPause] = useState(false)
   const timer = useRef<number>()
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
@@ -29,6 +28,8 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
       setPause(false)
     }
   })
+
+  const banners = ['banner1.png', 'banner2.jpg', 'banner3.jpeg', 'banner4.jpg']
 
   useEffect(() => {
     sliderRef.current.addEventListener('mouseover', () => {
@@ -45,8 +46,6 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
         slider.next()
       }
     }, 2000)
-
-    console.log(images)
     return () => {
       clearInterval(timer.current)
     }
@@ -54,9 +53,9 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
 
   return (
     <div ref={sliderRef} className={'keen-slider -mt-4'}>
-      {images.map(img => (
+      {banners.map((img, index) => (
         <div
-          key={img.id}
+          key={index}
           className={cn(
             'keen-slider__slide',
             `${s.root}`,
@@ -65,7 +64,7 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
           )}
         >
           <Image
-            src={img.source}
+            src={`/${img}`}
             layout="fill"
             objectFit="cover"
             quality={100}
@@ -76,4 +75,4 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
   )
 }
 
-export default LoopCarousel
+export default MainBannerCarousel

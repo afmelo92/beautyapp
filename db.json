@@ -1,0 +1,77 @@
+{ 
+  "categories": [
+    { "id": "camisetas", "title": "Camisetas" },
+    { "id": "calcas", "title": "Calças" },
+    { "id": "moletons", "title": "Moletons"},
+    { "id": "fitness", "title": "Fitness"},
+    { "id": "bermudas", "title": "Bermudas"},
+    { "id": "carteiras", "title": "Carteiras"},
+    { "id": "gorros-e-toucas", "title": "Gorros e Toucas"},
+    { "id": "meias", "title": "Meias"}
+  ],
+  "products": [
+    { "id": 1, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-835333117.jpg", "title": "Moletom Strip Crown", "price": 204.9, "category_id": "moletons", "slug": "moletom-strip-crown"},
+    { "id": 2, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-2156034489.jpg", "title": "Moletom Rainbow", "price": 194.9, "category_id": "moletons", "slug": "moletom-rainbow"},
+    { "id": 3, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-1969949767.jpg", "title": "Moletom Orbital Triangle", "price": 194.9, "category_id": "moletons", "slug": "moletom-orbital-triangle"},
+    { "id": 4, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-3473355599.jpg", "title": "Moletom Has No Way", "price": 199.9, "category_id": "moletons", "slug": "moletom-has-no-way"},
+    { "id": 5, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-2470263399.jpg", "title": "Moletom Supply NTC", "price": 199.9, "category_id": "moletons", "slug": "moletom-supply-ntc"},
+    { "id": 6, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-576326848.jpg", "title": "Moletom This is NTC", "price": 199.9, "category_id": "moletons", "slug": "moletom-this-is-ntc"},
+    { "id": 7, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-596856701.jpg", "title": "Moletom Outlined", "price": 194.9, "category_id": "moletons", "slug": "moletom-outlined"},
+    { "id": 8, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-564417470.jpg", "title": "Moletom Broken Out", "price": 199.9, "category_id": "moletons", "slug": "moletom-broken-out"},
+    { "id": 9, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-13312860.jpg", "title": "Moletom Helmet", "price": 189.9, "category_id": "moletons", "slug": "moletom-helmet"},
+    { "id": 10, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-310149795.jpg", "title": "Camiseta Abstract", "price": 99.9, "category_id": "camisetas", "slug": "camiseta-abstract"},
+    { "id": 11, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-1302968441.jpg", "title": "Camiseta Geometric Skull", "price": 99.9, "category_id": "camisetas", "slug": "camiseta-geomtric-skull"},
+    { "id": 12, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-1302968441.jpg", "title": "Camiseta Follow The Vibe", "price": 94.9, "category_id": "camisetas", "slug": "camiseta-follow-the-vibe"},
+    { "id": 13, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-1981331846.jpg", "title": "Camiseta Coat of Arms", "price": 94.9, "category_id": "camisetas", "slug": "camiseta-coat-of-arms"},
+    { "id": 14, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-2179449156.jpg", "title": "Camiseta Long Chemical", "price": 94.9, "category_id": "camisetas", "slug": "camiseta-long-chemical"},
+    { "id": 15, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-2001613427.jpg", "title": "Camiseta Palm Trees Paradise", "price": 99.9, "category_id": "camisetas", "slug": "camiseta-palm-trees-paradise"},
+    { "id": 16, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-14793564.jpg", "title": "Camiseta Plank Board", "price": 94.9, "category_id": "camisetas", "slug": "camiseta-plank-board"},
+    { "id": 17, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-805187245.jpg", "title": "Camiseta One Step", "price": 94.9, "category_id": "camisetas", "slug": "camiseta-one-step"},
+    { "id": 18, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-4084554184.jpg", "title": "Camiseta Long NTCESQC", "price": 99.9, "category_id": "camisetas", "slug": "camiseta-long-ntcesqc"},
+    { "id": 19, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-1800735592.jpg", "title": "Regata Aberta", "price": 59.9, "category_id": "fitness", "slug": "regata-aberta"},
+    { "id": 20, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-3766619370.jpg", "title": "Regata Nadador", "price": 59.9, "category_id": "fitness", "slug": "regata-nadador"},
+    { "id": 21, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-3039593691.jpg", "title": "Regata Running", "price": 59.9, "category_id": "fitness", "slug": "regata-running"},
+    { "id": 22, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-223652853.jpg", "title": "Regata Stripped", "price": 79.9, "category_id": "fitness", "slug": "regata-stripped"},
+    { "id": 23, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-254883889.jpg", "title": "Bermuda Scratched", "price": 79.9, "category_id": "bermudas", "slug": "bermuda-scratched"},
+    { "id": 24, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-691562679.jpg", "title": "Bermuda Two Colors Embroidery", "price": 79.9, "category_id": "bermudas", "slug": "bermuda-two-colors-embroidery"},
+    { "id": 25, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-2268683486.jpg", "title": "Camiseta Dry Fit Stripes", "price": 59.9, "category_id": "fitness", "slug": "camiseta-dry-fit-stripes"},
+    { "id": 26, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-345670412.jpg", "title": "Camiseta Dry Fit", "price": 59.9, "category_id": "fitness", "slug": "camiseta-dry-fit"},
+    { "id": 27, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-1128180370.jpg", "title": "Bermuda Basic Military", "price": 79.9, "category_id": "bermudas", "slug": "bermuda-basic-military"},
+    { "id": 28, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-2234268191.jpg", "title": "Carteira Urban NTC", "price": 69.9, "category_id": "carteiras", "slug": "carteira-urban-ntc"},
+    { "id": 29, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-927134102.png", "title": "Carteira Street NTC", "price": 69.9, "category_id": "carteiras", "slug": "carteira-street-ntc"},
+    { "id": 30, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-1270834314.jpg", "title": "Meia Street NTC", "price": 29.9, "category_id": "meias", "slug": "meia-street-ntc"},
+    { "id": 31, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-2206056216.jpg", "title": "Meia Crown", "price": 29.9, "category_id": "meias", "slug": "meia-crown"},
+    { "id": 32, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-3191358777.jpg", "title": "Touca Black Letter", "price": 59.9, "category_id": "gorros-e-toucas", "slug": "touca-black-letter"},
+    { "id": 33, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-759152460.jpg", "title": "Touca Stripes", "price": 69.9, "category_id": "gorros-e-toucas", "slug": "touca-stripes"},
+    { "id": 34, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-295449404.png", "title": "Carteira Style NTC", "price": 69.9, "category_id": "carteiras", "slug": "carteira-style-ntc"},
+    { "id": 35, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-584560831.jpg", "title": "Carteira Life Style NTC", "price": 89.9, "category_id": "carteiras", "slug": "carteira-life-style-ntc"},
+    { "id": 36, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/400x600-4028856904.jpg", "title": "Meia Nao Tem Como", "price": 29.9, "category_id": "meias", "slug": "meia-ntc"}
+  ],
+  "recommended": [
+    { "id": 1, "source": "https://www.onodera.com.br/media/product/1c7/drenagem-linfatica-corporal-onolinfatica-a23.jpg", "title": "DRENAGEM LINFATICA CORPORAL ONOLINFATICA", "price": 104.9, "description": "Diminui o inchaço, elimina toxinas e retenção de líquidos no organismo", "masc": false, "fem": true},
+    { "id": 2, "source": "https://www.onodera.com.br/media/product/3ea/massagem-relaxante-50-68d.jpg", "title": "MASSAGEM RELAXANTE 50'", "price": 104.0, "description": "Promove benefícios físicos e psicológicos. Proporciona uma sensação de bem-estar", "masc": false, "fem": true},
+    { "id": 3, "source": "https://www.onodera.com.br/media/product/3ea/massagem-relaxante-50-68d.jpg", "title":"MASSAGEM RELAXANTE 30'","price": 104.0, "description": "Promove benefícios físicos e psicológicos. Proporciona uma sensação de bem-estar", "masc": false, "fem": true},
+    { "id": 4, "source": "https://www.onodera.com.br/media/product/738/onodepil-virilha-ee6.jpg", "title":"ONODEPIL - VIRILHA","price": 294.0, "description": "Depilação a laser desenvolvido com o objetivo de tratar os pêlos com mais segurança.", "masc": false, "fem": true},
+    { "id": 5, "source": "https://www.onodera.com.br/media/product/f25/limpeza-de-pele-com-microdermoabras-o-b4d.jpg", "title":"LIMPEZA DE PELE COM MICRODERMOABRASÃO","price": 175.2, "description": "Indicado para remover impurezas da pele e promover a limpeza dos poros.", "masc": false, "fem": true},
+    { "id": 6, "source": "https://www.onodera.com.br/media/product/ec6/crioslim-criolipolise-696.jpg", "title":"CRIOSLIM - CRIOLIPÓLISE","price": 450.0, "description": "É um tratamento eficaz, não invasivo e de combate à gordura localizada", "masc": false, "fem": true},
+    { "id": 7, "source": "https://www.onodera.com.br/media/product/052/maximus-face-d4f.jpg", "title":"MAXIMUS FACE","price": 180.0, "description": "Trata, em uma mesma sessão, os sinais de expressão, da flacidez muscular e da pele .", "masc": false, "fem": true}
+  ],
+  "treatments": [
+    { "id": 1, "source": "https://www.onodera.com.br/media/typecms/01.jpg"},
+    { "id": 2, "source": "https://www.onodera.com.br/media/typecms/02.jpg"},
+    { "id": 3, "source": "https://www.onodera.com.br/media/typecms/03.jpg"},
+    { "id": 4, "source": "https://www.onodera.com.br/media/typecms/04.jpg"}    
+  ],
+  "banners": [
+    { "id": 1, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-3840895049.jpg", "description": "shorts"},
+    { "id": 2, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-3890828086.jpg", "description": "camisetas"},
+    { "id": 3, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-1990314993.jpg", "description": "moletons"},
+    { "id": 4, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-2135565350.jpg", "description": "fitness"}
+  ],
+  "top": [
+    { "id": 1, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-1497214986.jpg", "description": "camisetas"},
+    { "id": 2, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-2204818397.jpg", "description": "carteiras"},
+    { "id": 3, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-4159844946.jpg", "description": "fitness"}
+
+  ]
+}

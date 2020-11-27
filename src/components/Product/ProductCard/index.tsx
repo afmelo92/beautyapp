@@ -1,8 +1,23 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { Listbox, Transition } from '@headlessui/react'
+import formatValue from '../../../utils/formatValue'
 
-const ProductCard: React.FC = () => {
+interface Product {
+  id: number
+  source: string
+  title: string
+  price: number
+  description: string
+  masc?: boolean
+  fem?: boolean
+}
+
+interface ProductProps {
+  product: Product
+}
+
+const ProductCard: React.FC<ProductProps> = ({ product }) => {
   const [selectedSession, setSelectedSession] = useState(1)
 
   const sessions = [1, 5, 10]
@@ -12,42 +27,39 @@ const ProductCard: React.FC = () => {
       <div className="flex-col">
         <div className="flex justify-center">
           <Image
-            src="/limpeza-de-pele-com-microdermo.jpg"
-            alt="limpeza-de-pele-com-microdermo"
+            src={product.source}
+            alt={product.title}
             width={273}
             height={273}
+            quality={100}
           />
         </div>
         <h2 className="font-black text-gray-100 text-center mt-3">
-          LIMPEZA DE PELE COM MICRODERMOABRASÃO
+          {product.title}
         </h2>
         <p className="font-light text-sm mt-1 text-gray-500 text-center">
-          Indicado para remover impurezas da pele e promover a limpeza dos poros
+          {product.description}
         </p>
 
         <div className="flex items-center justify-between py-3">
           <div className="flex w-14 max-w-xs justify-between">
-            <Image
-              src="/feminino.png"
-              alt="limpeza-de-pele-com-microdermo"
-              layout="fixed"
-              width={23}
-              height={23}
-              quality={85}
-            />
-            <Image
-              src="/masculino.png"
-              alt="limpeza-de-pele-com-microdermo"
-              layout="fixed"
-              width={23}
-              height={23}
-              quality={85}
-            />
+            {product.fem && (
+              <Image
+                src="/feminino.png"
+                alt="limpeza-de-pele-com-microdermo"
+                layout="fixed"
+                width={23}
+                height={23}
+                quality={85}
+              />
+            )}
           </div>
           <Listbox
             as="div"
             className="space-y-1"
             value={selectedSession}
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore:next-line
             onChange={setSelectedSession}
           >
             {({ open }) => (
@@ -138,11 +150,14 @@ const ProductCard: React.FC = () => {
         </div>
         <div>
           <h4 className="text-lg font-medium line-through text-gray-100 mb-1">
-            R$195,90
+            {formatValue(product.price)}
           </h4>
-          <h1 className="text-3xl font-extrabold text-gray-100">R$155,90</h1>
+          <h1 className="text-3xl font-extrabold text-gray-100">
+            {formatValue(product.price)}
+          </h1>
           <p className="text-sm text-gray-400">
-            <strong>6x </strong>de <strong>R$26,00</strong> sem juros
+            <strong>6x </strong>de{' '}
+            <strong>{formatValue(product.price / 6)}</strong> sem juros
           </p>
         </div>
         <button className="flex mx-auto mt-4 p-3 w-full bg-pink-600 hover:bg-pink-800 rounded-md font-bold text-gray-100">

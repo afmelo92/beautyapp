@@ -5,7 +5,21 @@ import s from './Banner.module.css'
 import cn from 'classnames'
 import ProductCard from '../../Product/ProductCard'
 
-const ProductCarousel: React.FC = () => {
+interface Product {
+  id: number
+  source: string
+  title: string
+  price: number
+  description: string
+  masc?: boolean
+  fem?: boolean
+}
+
+interface ProductProps {
+  products: Product[]
+}
+
+const ProductCarousel: React.FC<ProductProps> = ({ products }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -19,18 +33,14 @@ const ProductCarousel: React.FC = () => {
     <>
       <div className={`${s.navigationwrapper}`}>
         <div ref={sliderRef} className="keen-slider">
-          <div className={cn('keen-slider__slide', `${s.root}`)}>
-            <ProductCard />
-          </div>
-          <div className={cn('keen-slider__slide', `${s.root}`)}>
-            <ProductCard />
-          </div>
-          <div className={cn('keen-slider__slide', `${s.root}`)}>
-            <ProductCard />
-          </div>
-          <div className={cn('keen-slider__slide', `${s.root}`)}>
-            <ProductCard />
-          </div>
+          {products.map(product => (
+            <div
+              key={product.id}
+              className={cn('keen-slider__slide', `${s.root}`)}
+            >
+              <ProductCard product={product} />
+            </div>
+          ))}
           {/* <a
             href="https://google.com"
             className={cn(

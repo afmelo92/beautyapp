@@ -1,13 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
+import Image from 'next/image'
+
 import 'keen-slider/keen-slider.min.css'
 import s from './Loop.module.css'
 
-interface LoopProps {
-  bannerHeight: number
+interface Images {
+  id: number
+  source: string
 }
 
-const LoopCarousel: React.FC<LoopProps> = ({ bannerHeight }) => {
+interface LoopProps {
+  images: Images[]
+}
+
+const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
   const [pause, setPause] = useState(false)
   const timer = useRef<number>()
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
@@ -44,42 +51,16 @@ const LoopCarousel: React.FC<LoopProps> = ({ bannerHeight }) => {
   return (
     <>
       <div ref={sliderRef} className={'keen-slider -mt-4'}>
-        <div
-          className={`keen-slider__slide ${s.numberslide1} ${s.root}`}
-          style={{ height: bannerHeight }}
-        >
-          1
-        </div>
-        <div
-          className={`keen-slider__slide ${s.numberslide2} ${s.root}`}
-          style={{ height: bannerHeight }}
-        >
-          2
-        </div>
-        <div
-          className={`keen-slider__slide ${s.numberslide3} ${s.root}`}
-          style={{ height: bannerHeight }}
-        >
-          3
-        </div>
-        <div
-          className={`keen-slider__slide ${s.numberslide4} ${s.root}`}
-          style={{ height: bannerHeight }}
-        >
-          4
-        </div>
-        <div
-          className={`keen-slider__slide ${s.numberslide5} ${s.root}`}
-          style={{ height: bannerHeight }}
-        >
-          5
-        </div>
-        <div
-          className={`keen-slider__slide ${s.numberslide6} ${s.root}`}
-          style={{ height: bannerHeight }}
-        >
-          6
-        </div>
+        {images.map(img => (
+          <div key={img.id} className={`keen-slider__slide ${s.root}`}>
+            <Image
+              src={img.source}
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+            />
+          </div>
+        ))}
       </div>
     </>
   )

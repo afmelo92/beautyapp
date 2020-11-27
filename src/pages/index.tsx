@@ -3,12 +3,65 @@ import Header from '../components/Header'
 import LoopCarousel from '../components/Carousel/LoopCarousel'
 import ProductCarousel from '../components/Carousel/ProductCarousel/index.'
 import Footer from '../components/Footer'
+import { GetStaticProps } from 'next'
+import useSWR from 'swr'
 
-const Home: React.FC = () => {
+interface Product {
+  id: number
+  source: string
+  title: string
+  price: number
+  description: string
+  masc?: boolean
+  fem?: boolean
+}
+
+interface Treatments {
+  id: number
+  source: string
+}
+
+interface HomeProps {
+  recommended: Product[]
+  treatments: Treatments[]
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  // `getStaticProps` is invoked on the server-side,
+  // so this `fetcher` function will be executed on the server-side.
+  const fetcher = url => fetch(url).then(res => res.json())
+
+  const recommended = await fetcher('http://localhost:3333/recommended')
+  const treatments = await fetcher('http://localhost:3333/treatments')
+
+  return {
+    props: {
+      recommended,
+      treatments
+    },
+    revalidate: 10
+  }
+}
+
+const Home: React.FC<HomeProps> = ({ recommended, treatments }) => {
+  const fetcher = url => fetch(url).then(res => res.json())
+
+  const { data: recomm } = useSWR(
+    'http://localhost:3333/recommended',
+    fetcher,
+    {
+      initialData: recommended
+    }
+  )
+
+  const { data: treatm } = useSWR('http://localhost:3333/treatments', fetcher, {
+    initialData: treatments
+  })
+
   return (
     <>
       <Header />
-      <LoopCarousel bannerHeight={500} />
+      <LoopCarousel images={treatm} />
       <div>
         <section className="flex-col flex-1 mx-auto max-w-screen-xl">
           <div className="flex-col pt-10 pb-10 px-5">
@@ -21,7 +74,7 @@ const Home: React.FC = () => {
           </div>
         </section>
         <section className="flex-col flex-1 mx-auto max-w-screen-xl">
-          <ProductCarousel />
+          <ProductCarousel products={recomm} />
         </section>
         <section className="flex-col flex-1 mx-auto mt-10 max-w-screen-xl">
           <div className="flex-col pt-10 pb-10 px-5">
@@ -37,7 +90,7 @@ const Home: React.FC = () => {
           </div>
         </section>
         <section className="flex-col flex-1 mx-auto max-w-screen-xl">
-          <LoopCarousel bannerHeight={250} />
+          <LoopCarousel images={treatm} />
         </section>
         <section className="flex-col flex-1 mx-auto mt-10 max-w-screen-xl">
           <div className="flex-col pt-10 pb-10 px-5">
@@ -53,7 +106,7 @@ const Home: React.FC = () => {
           </div>
         </section>
         <section className="flex-col flex-1 mx-auto max-w-screen-xl mb-24">
-          <LoopCarousel bannerHeight={250} />
+          <LoopCarousel images={treatm} />
         </section>
       </div>
       <section className="bg-pink-600 flex-col flex-1 mx-auto w-full pt-8">

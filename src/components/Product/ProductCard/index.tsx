@@ -34,10 +34,10 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
             quality={100}
           />
         </div>
-        <h2 className="font-black text-gray-100 text-center mt-3">
+        <h2 className="font-black h-12 text-gray-100 text-center mt-3">
           {product.title}
         </h2>
-        <p className="font-light text-sm mt-1 text-gray-500 text-center">
+        <p className="font-light h-12 text-sm mt-1 text-gray-500 text-center">
           {product.description}
         </p>
 
@@ -163,7 +163,7 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
         <button className="flex mx-auto mt-4 p-3 w-full bg-pink-600 hover:bg-pink-800 rounded-md font-bold text-gray-100">
           <p className="mx-auto">ADICIONAR AO CARRINHO</p>
         </button>
-        <button className="flex mx-auto justify-center mt-2 p-2 w-full bg-purple-400 hover:bg-purple-600 rounded-md font-normal text-xs text-gray-100">
+        <button className="flex mx-auto justify-center mt-2 p-2 w-full bg-purple-600 hover:bg-purple-800 rounded-md font-normal text-xs text-gray-100">
           <div>
             <p>AVALIAÇÃO ONLINE GRATUITA</p>
           </div>

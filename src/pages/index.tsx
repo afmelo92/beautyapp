@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Header from '../components/Header'
 import LoopCarousel from '../components/Carousel/LoopCarousel'
 import ProductCarousel from '../components/Carousel/ProductCarousel/index.'
@@ -8,6 +8,7 @@ import Image from 'next/image'
 
 import useSWR from 'swr'
 import MainBannerCarousel from '../components/Carousel/MainBannerCarousel'
+import BlogCarousel from '../components/Carousel/BlogCarousel/index.'
 
 interface Product {
   id: number
@@ -24,16 +25,24 @@ interface Treatments {
   source: string
 }
 
-interface Categories {
+interface Category {
   id: string
   source: string
   title: string
 }
 
+interface Post {
+  id: number
+  source: string
+  title: string
+  description: string
+}
+
 interface HomeProps {
   recommended: Product[]
   treatments: Treatments[]
-  categories: Categories[]
+  categories: Category[]
+  posts: Post[]
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -42,18 +51,25 @@ export const getStaticProps: GetStaticProps = async () => {
   const recommended = await fetcher('http://localhost:3333/recommended')
   const treatments = await fetcher('http://localhost:3333/treatments')
   const categories = await fetcher('http://localhost:3333/categories')
+  const posts = await fetcher('http://localhost:3333/posts')
 
   return {
     props: {
       recommended,
       treatments,
-      categories
+      categories,
+      posts
     },
     revalidate: 30
   }
 }
 
-const Home: React.FC<HomeProps> = ({ recommended, treatments, categories }) => {
+const Home: React.FC<HomeProps> = ({
+  recommended,
+  treatments,
+  categories,
+  posts
+}) => {
   const fetcher = url => fetch(url).then(res => res.json())
 
   const { data: recomm } = useSWR(
@@ -70,6 +86,10 @@ const Home: React.FC<HomeProps> = ({ recommended, treatments, categories }) => {
 
   const { data: cats } = useSWR('http://localhost:3333/categories', fetcher, {
     initialData: categories
+  })
+
+  const { data: psts } = useSWR('http://localhost:3333/posts', fetcher, {
+    initialData: posts
   })
 
   return (
@@ -153,51 +173,40 @@ const Home: React.FC<HomeProps> = ({ recommended, treatments, categories }) => {
         </div>
       </section>
       <section className="flex-1 px-6 mx-auto max-w-screen-xl justify-between hidden md:flex">
-        <a href="/">
-          <div className="flex-col relative">
-            <Image
-              src={cats[0].source}
-              layout="intrinsic"
-              width={395}
-              height={492}
-              quality={100}
-            />
-            <span className="flex justify-center absolute -mt-12 ml-32 bg-pink-400 text-rose-100 p-2">
-              {cats[0].title}
-            </span>
-          </div>
-        </a>
-        <a href="/">
-          <div className="flex-col relative">
-            <Image
-              src={cats[1].source}
-              layout="intrinsic"
-              width={395}
-              height={492}
-              quality={100}
-            />
-            <span className="flex justify-center absolute -mt-12 ml-32 bg-pink-400 text-rose-100 p-2">
-              {cats[1].title}
-            </span>
-          </div>
-        </a>
-        <a href="/">
-          <div className="flex-col relative">
-            <Image
-              src={cats[2].source}
-              layout="intrinsic"
-              width={395}
-              height={492}
-              quality={100}
-            />
-            <span className="flex justify-center absolute -mt-12 ml-32 bg-pink-400 text-rose-100 p-2">
-              {cats[2].title}
-            </span>
-          </div>
-        </a>
+        {cats.map((category: Category, index: number) => (
+          <a key={index} href="/">
+            <div className="flex-col relative">
+              <Image
+                src={category.source}
+                layout="intrinsic"
+                width={395}
+                height={492}
+                quality={100}
+              />
+              <span className="flex justify-center absolute -mt-12 ml-32 bg-pink-600 font-semibold text-rose-100 p-2">
+                {category.title}
+              </span>
+            </div>
+          </a>
+        ))}
       </section>
       <section className="flex-col flex-1 mx-auto max-w-screen-xl md:hidden">
         <LoopCarousel images={cats} />
+      </section>
+
+      <section className="flex-col flex-1 mx-auto mt-10 max-w-screen-xl">
+        <div className="flex-col pt-10 pb-10 px-5">
+          <p className="font-medium text-2xl md:text-3xl text-pink-800 ">
+            blog
+          </p>
+          <h1 className="font-black text-6xl -my-2 md:-my-4 text-pink-800 md:text-8xl">
+            BeautyApp
+          </h1>
+        </div>
+      </section>
+
+      <section className="flex-col flex-1 mx-auto mt-4 max-w-screen-xl">
+        <BlogCarousel posts={psts} />
       </section>
 
       <section className="bg-pink-600 flex-col flex-1 mx-auto w-full pt-8">

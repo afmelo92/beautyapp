@@ -63,10 +63,11 @@
     { "id": 3, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-1990314993.jpg", "description": "moletons"},
     { "id": 4, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-2135565350.jpg", "description": "fitness"}
   ],
-  "top": [
-    { "id": 1, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-1497214986.jpg", "description": "camisetas"},
-    { "id": 2, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-2204818397.jpg", "description": "carteiras"},
-    { "id": 3, "source": "https://braavo-cache.nyc3.cdn.digitaloceanspaces.com/ntc/0x0-4159844946.jpg", "description": "fitness"}
-
+  "posts": [
+    { "id": 1, "source": "https://www.onodera.com.br/media/shutterstock_373832692.jpg", "title": "Por que é tão difícil se livrar do culote? Descubra tratamentos", "description": "Se você quer se ver livre do culote, vamos te explicar um pouco melhor sobre isso e te mostrar dicas e tratamentos que podem ajudar. Continue lendo!"},
+    { "id": 2, "source": "https://www.onodera.com.br/media/shutterstock_658591900.png", "title": "Ácidos para a pele: descubra para que eles servem e como usar", "description": "Vamos te contar tudo sobre os ácidos para a pele, continue lendo!"},
+    { "id": 3, "source": "https://www.onodera.com.br/media/shutterstock_1214189782.jpg", "title": "5 alimentos para melhorar a pele", "description": "Você sabia que alguns alimentos da sua dieta podem servir para melhorar a pele? Conheça quais são! "},
+    { "id": 4, "source": "https://www.onodera.com.br/media/shutterstock_604172264.png", "title": "Tratamento para cicatrizes sem cirurgia plástica", "description": "No texto de hoje vamos te contar algumas opções para diminuir essas marcas sem nenhuma cirurgia."},
+    { "id": 5, "source": "https://www.onodera.com.br/media/shutterstock_700411801.png", "title": "Pele seca ou ressecada? Conheça as diferenças e tratamentos", "description": "Se você quer entender melhor essa diferença, vai adorar o nosso texto de hoje!"}
   ]
 }

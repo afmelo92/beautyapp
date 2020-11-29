@@ -61,7 +61,8 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
             'keen-slider__slide',
             `${s.root}`,
             'h-56',
-            'md:h-banner'
+            'md:h-banner',
+            'relative'
           )}
         >
           <Image
@@ -70,6 +71,11 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
             objectFit="cover"
             quality={100}
           />
+          {img.title && (
+            <span className="flex justify-center absolute mt-48 bg-pink-600 font-semibold text-rose-100 p-2">
+              {img.title}
+            </span>
+          )}
         </div>
       ))}
     </div>

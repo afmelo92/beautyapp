@@ -59,7 +59,7 @@ const MainBannerCarousel: React.FC = () => {
           className={cn(
             'keen-slider__slide',
             `${s.root}`,
-            'h-56',
+            'h-72',
             'md:h-banner'
           )}
         >

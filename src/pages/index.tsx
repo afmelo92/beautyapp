@@ -5,6 +5,7 @@ import ProductCarousel from '../components/Carousel/ProductCarousel/index.'
 import Footer from '../components/Footer'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaRegCreditCard } from 'react-icons/fa'
 import { BiLock } from 'react-icons/bi'
 
@@ -29,7 +30,9 @@ interface Treatments {
 
 interface Category {
   id: string
+  name: string
   source: string
+  banner: string
   title: string
 }
 
@@ -153,6 +156,7 @@ const Home: React.FC<HomeProps> = ({
             width={371}
             height={240}
             quality={100}
+            className="cursor-pointer"
           />
         </div>
       </section>
@@ -163,6 +167,7 @@ const Home: React.FC<HomeProps> = ({
           width={371}
           height={240}
           quality={100}
+          className="cursor-pointer"
         />
         <Image
           src={treatm[2].source}
@@ -170,6 +175,7 @@ const Home: React.FC<HomeProps> = ({
           width={371}
           height={240}
           quality={100}
+          className="cursor-pointer"
         />
         <Image
           src={treatm[3].source}
@@ -177,6 +183,7 @@ const Home: React.FC<HomeProps> = ({
           width={371}
           height={240}
           quality={100}
+          className="cursor-pointer"
         />
       </section>
 
@@ -198,9 +205,12 @@ const Home: React.FC<HomeProps> = ({
         </div>
       </section>
       <section className="flex-1 px-6 mx-auto max-w-screen-xl justify-between hidden md:flex">
-        {cats.map((category: Category, index: number) => (
-          <a key={index} href="/">
-            <div className="flex-col relative">
+        {cats.map((category: Category) => (
+          <Link
+            key={category.id}
+            href={`/catalog/categories/${encodeURIComponent(category.name)}`}
+          >
+            <div className="flex-col relative cursor-pointer">
               <Image
                 src={category.source}
                 layout="intrinsic"
@@ -212,7 +222,7 @@ const Home: React.FC<HomeProps> = ({
                 {category.title}
               </span>
             </div>
-          </a>
+          </Link>
         ))}
       </section>
       <section className="flex-col flex-1 mx-auto max-w-screen-xl md:hidden">

@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/image'
-
+import Link from 'next/link'
 import 'keen-slider/keen-slider.min.css'
 import cn from 'classnames'
 import s from './Loop.module.css'
 
 interface Images {
   id?: number | string
+  slug?: string
+  name?: string
   source: string
+  banner?: string
   title?: string
 }
 
@@ -65,12 +68,14 @@ const LoopCarousel: React.FC<LoopProps> = ({ images }) => {
             'relative'
           )}
         >
-          <Image
-            src={img.source}
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-          />
+          <Link href={`/catalog/categories/${encodeURIComponent(img.name)}`}>
+            <Image
+              src={img.source}
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+            />
+          </Link>
           {img.title && (
             <span className="flex justify-center absolute mt-48 bg-pink-600 font-semibold text-rose-100 p-2">
               {img.title}

@@ -5,9 +5,8 @@ import Image from 'next/image'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Header from '../../../components/Header'
 import ProductCarousel from '../../../components/Carousel/ProductCarousel/index.'
-import { FaRegCreditCard } from 'react-icons/fa'
-import { BiLock } from 'react-icons/bi'
 import PaymentBanner from '../../../components/PaymentBanner'
+import Footer from '../../../components/Footer'
 
 interface Category {
   id: string
@@ -62,8 +61,19 @@ const Category: React.FC<CategoryProps> = ({ products, category }) => {
       </section>
       <PaymentBanner />
       <section className="flex-col flex-1 mx-auto max-w-screen-xl">
+        <div className="flex-col pt-10 pb-10 px-5">
+          <p className="font-medium text-2xl md:text-3xl text-pink-800 ">
+            Os mais
+          </p>
+          <h1 className="font-black text-7xl -my-2 md:-my-4 text-pink-800 md:text-8xl">
+            Vendidos
+          </h1>
+        </div>
+      </section>
+      <section className="flex-col flex-1 mx-auto max-w-screen-xl">
         <ProductCarousel products={products} />
       </section>
+      <Footer />
     </>
   )
 }

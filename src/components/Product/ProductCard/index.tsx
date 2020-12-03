@@ -49,7 +49,17 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
             {product.fem && (
               <Image
                 src="/feminino.png"
-                alt="limpeza-de-pele-com-microdermo"
+                alt="feminino"
+                layout="fixed"
+                width={23}
+                height={23}
+                quality={85}
+              />
+            )}
+            {product.masc && (
+              <Image
+                src="/masculino.png"
+                alt="masculino"
                 layout="fixed"
                 width={23}
                 height={23}

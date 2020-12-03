@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-center text-gray-100">
+    <footer className="text-center text-gray-100 bg-pink-600 flex-col flex-1 mx-auto w-full pt-8">
       <div className="flex justify-center lg:w-0 lg:flex-1">
         <a href="#">
           <span className="sr-only">BeautyApp</span>

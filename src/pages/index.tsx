@@ -6,8 +6,6 @@ import Footer from '../components/Footer'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaRegCreditCard } from 'react-icons/fa'
-import { BiLock } from 'react-icons/bi'
 
 import useSWR from 'swr'
 import MainBannerCarousel from '../components/Carousel/MainBannerCarousel'
@@ -223,9 +221,7 @@ const Home: React.FC<HomeProps> = ({
         <BlogCarousel posts={psts} />
       </section>
 
-      <section className="bg-pink-600 flex-col flex-1 mx-auto w-full pt-8">
-        <Footer />
-      </section>
+      <Footer />
     </>
   )
 }

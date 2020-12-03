@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
       <section className="md:flex md:justify-evenly pb-10">
         <section className="text-left pl-8 mt-10">
           <h1 className="text-3xl underline font-bold mb-4">Links Úteis</h1>
-          <ul className="font-light leading-8">
+          <ul className="font-light leading-8 md:leading-5">
             <li>
               <a href="">Sobre nós</a>
             </li>

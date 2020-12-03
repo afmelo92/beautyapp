@@ -1,8 +1,13 @@
+/* eslint-disable camelcase */
 import React from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Header from '../../../components/Header'
+import ProductCarousel from '../../../components/Carousel/ProductCarousel/index.'
+import { FaRegCreditCard } from 'react-icons/fa'
+import { BiLock } from 'react-icons/bi'
+import PaymentBanner from '../../../components/PaymentBanner'
 
 interface Category {
   id: string
@@ -21,6 +26,7 @@ interface Product {
   masc?: boolean
   fem?: boolean
   slug: string
+  category_id?: string
 }
 
 interface CategoryProps {
@@ -31,8 +37,7 @@ interface CategoryProps {
 const Category: React.FC<CategoryProps> = ({ products, category }) => {
   const router = useRouter()
 
-  // console.log(`PRODUCTS:: ${JSON.stringify(products)}`)
-  // console.log(`CATEGORY:: ${JSON.stringify(category)}`)
+  console.log(products)
 
   if (router.isFallback) {
     return <h1>LOADING...</h1>
@@ -54,6 +59,10 @@ const Category: React.FC<CategoryProps> = ({ products, category }) => {
             {category[0].title}
           </h1>
         </div>
+      </section>
+      <PaymentBanner />
+      <section className="flex-col flex-1 mx-auto max-w-screen-xl">
+        <ProductCarousel products={products} />
       </section>
     </>
   )

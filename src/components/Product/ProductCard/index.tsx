@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { Listbox, Transition } from '@headlessui/react'
@@ -8,9 +9,11 @@ interface Product {
   source: string
   title: string
   price: number
-  description: string
+  description?: string
   masc?: boolean
   fem?: boolean
+  slug: string
+  category_id?: string
 }
 
 interface ProductProps {

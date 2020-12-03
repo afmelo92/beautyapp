@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { useKeenSlider } from 'keen-slider/react'
 import React, { useState } from 'react'
 import 'keen-slider/keen-slider.min.css'
@@ -10,9 +11,11 @@ interface Product {
   source: string
   title: string
   price: number
-  description: string
+  description?: string
   masc?: boolean
   fem?: boolean
+  slug: string
+  category_id?: string
 }
 
 interface CarouselProps {

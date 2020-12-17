@@ -36,8 +36,6 @@ interface CategoryProps {
 const Category: React.FC<CategoryProps> = ({ products, category }) => {
   const router = useRouter()
 
-  console.log(products)
-
   if (router.isFallback) {
     return <h1>LOADING...</h1>
   }
@@ -70,7 +68,7 @@ const Category: React.FC<CategoryProps> = ({ products, category }) => {
           </h1>
         </div>
       </section>
-      <section className="flex-col flex-1 mx-auto max-w-screen-xl">
+      <section className="flex-col flex-1 mx-auto max-w-screen-xl mb-14">
         <ProductCarousel products={products} />
       </section>
       <Footer />

@@ -43,6 +43,7 @@ const Carousel: React.FC = () => {
       clearInterval(timer.current)
     }
   }, [pause, slider])
+
   return (
     <div ref={sliderRef} className="keen-slider h-64 md:h-64">
       {banners.map((banner, index) => (

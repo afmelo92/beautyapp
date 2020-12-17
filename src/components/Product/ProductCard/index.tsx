@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { Listbox, Transition } from '@headlessui/react'
 import formatValue from '../../../utils/formatValue'
+import Link from 'next/link'
 
 interface Product {
   id: number
@@ -28,15 +29,20 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
   return (
     <div className="max-w-card mx-auto bg-gray-800 p-5 rounded-lg">
       <div className="flex-col">
-        <div className="flex justify-center">
-          <Image
-            src={product.source}
-            alt={product.title}
-            width={273}
-            height={273}
-            quality={100}
-          />
-        </div>
+        <Link
+          key={product.id}
+          href={`/catalog/products/${encodeURIComponent(product.slug)}`}
+        >
+          <div className="flex justify-center cursor-pointer">
+            <Image
+              src={product.source}
+              alt={product.title}
+              width={273}
+              height={273}
+              quality={100}
+            />
+          </div>
+        </Link>
         <h2 className="font-black h-12 text-gray-100 text-center mt-3">
           {product.title}
         </h2>
